@@ -1,0 +1,36 @@
+//========================================
+// Breakpoints
+// GenBase Global Configuration
+//========================================
+
+/// Global GenBase Breakpoints
+/// @type Map
+$genbase-breakpoints: (
+        phone-portrait: 360px,
+        phone-landscape: 640px,
+        tablet-portrait: 768px,
+        tablet-landscape: 1024px,
+        desktop: 1366px,
+        large-desktop: 1680px
+) !default;
+
+// Merge the theme's customized breakpoints
+@if (variable_exists(config-breakpoints)) {
+  $genbase-breakpoints: map-merge(
+                  $genbase-breakpoints,
+                  $config-breakpoints
+  ) !default;
+}
+
+// Override the `include-media.scss` breakpoints.
+// https://github.com/eduardoboucas/include-media/blob/master/dist/_include-media.scss#L34
+$breakpoints: $genbase-breakpoints;
+
+/// Get the breakpoint based on the device.
+///
+/// @param {Arglist} $keys - Key chain
+///
+/// @return {*} - Breakpoint value.
+@function get-breakpoint($keys...) {
+  @return map-deep-get($genbase-breakpoints, $keys...);
+}

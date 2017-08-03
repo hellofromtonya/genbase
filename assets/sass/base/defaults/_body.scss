@@ -1,0 +1,23 @@
+html {
+  font-size: 62.5%;
+}
+
+/* Chrome fix */
+body > div {
+  font-size: 2rem;
+}
+
+body {
+  background-color: get-color(body, background-color);
+  color: get-typography(base, color);
+  font-family: get-typography(base, font-family);
+  font-size: get-typography(base, font-size);
+  -webkit-font-smoothing: antialiased;
+  font-weight: get-typography(base, font-weight);
+  line-height: get-typography(base, line-height);
+  margin: 0;
+}
+
+*:focus {
+  outline:none;
+}

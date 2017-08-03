@@ -1,0 +1,23 @@
+$theme-version: '1.0.0';
+
+// Load the global configuration files from
+// the theme.
+@import 'utilities/index.scss';
+
+@import '_config/index';
+@import '../../node_modules/sass-rem/rem';
+@import '../../node_modules/include-media/dist/include-media';
+
+// Load in the stylesheet's file header.
+@import '../../../assets/sass/_config/file-header.scss';
+
+/* # HTML5 Reset
+---------------------------------------------------------------------------------------------------- */
+
+@import 'base/reset/normalize';
+@import 'base/reset/box-sizing';
+@import 'base/reset/float-clearing';
+
+/* # Defaults
+---------------------------------------------------------------------------------------------------- */
+@import 'base/defaults/typographical-elements';

@@ -1,0 +1,28 @@
+//========================================
+// Colors
+// GenBase Global Configuration
+//========================================
+
+$genbase-colors: (
+        body: (
+                background-color: #eee,
+                color: #333
+        )
+) !global;
+
+// Merge the theme's customizations.
+@if (variable_exists(config-colors)) {
+  $genbase-colors: map-merge(
+                  $genbase-colors,
+                  $config-colors
+  ) !global;
+}
+
+/// Get the color.
+///
+/// @param {Arglist} $keys - Key chain
+///
+/// @return {*} - color
+@function get-color($keys...) {
+  @return map-deep-get($genbase-colors, $keys...);
+}

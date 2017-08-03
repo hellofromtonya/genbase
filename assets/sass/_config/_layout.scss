@@ -1,0 +1,34 @@
+//========================================
+// Layouts
+// GenBase Global Configuration
+//========================================
+
+/// Global GenBase Breakpoints
+/// @type Map
+$genbase-layout: (
+        max-width: (
+                phone-portrait: 100%,
+                phone-landscape: 100%,
+                tablet-portrait: 100%,
+                tablet-landscape: 960px,
+                desktop: 1140px,
+                large-desktop: 1140px
+        )
+) !default;
+
+// Merge the theme's customizations.
+@if (variable_exists(config-layout)) {
+  $genbase-layout: map-merge(
+                  $genbase-layout,
+                  $config-layout
+  ) !default;
+}
+
+/// Get the layout parameter.
+///
+/// @param {Arglist} $keys - Key chain
+///
+/// @return {*} - Desired value
+@function get-layout($keys...) {
+  @return map-deep-get($genbase-layout, $keys...);
+}

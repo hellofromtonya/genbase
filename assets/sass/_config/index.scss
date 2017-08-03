@@ -1,0 +1,14 @@
+// Load the global configuration files from
+// the theme.
+
+@import '../../../assets/sass/_config/globals.scss';
+@import '../../../assets/sass/_config/breakpoints.scss';
+@import '../../../assets/sass/_config/colors.scss';
+@import '../../../assets/sass/_config/layout.scss';
+@import '../../../assets/sass/_config/typography.scss';
+
+@import 'globals';
+@import 'breakpoints';
+@import 'colors';
+@import 'layout';
+@import 'typography';
